@@ -1,187 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kebba Colley | CCNA Badge</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kebba Colley - Badges</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+  margin:0;
+  padding:20px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+h1 {
+  color:#0b5cff;
+  margin-bottom:20px;
+  text-align:center;
+}
+/* QR Section */
+.qr-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:40px;
+}
+.qr-section p{
+  margin:0 0 10px 0;
+  font-weight:600;
+}
+.qr-section a img{
+  width:150px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-      color: #1f2937;
-    }
+/* Badge Cards Grid */
+.cards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  width:90%;
+  max-width:1000px;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
+/* Badge Card Style */
+.card {
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+  overflow:hidden;
+  text-align:center;
+  padding:20px;
+}
+.card img{
+  width:140px;
+  margin-top:10px;
+  border-radius:12px;
+}
+.card h2{
+  margin:16px 0 8px;
+  color:#0b5cff;
+  font-size:18px;
+}
+.card p{
+  margin:4px 0;
+  color:#555;
+  font-size:14px;
+}
+.verify-btn{
+  display:inline-block;
+  margin:15px 0 0;
+  padding:10px 20px;
+  border-radius:12px;
+  background:#ff6f00;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.2s;
+}
+.verify-btn:hover{
+  background:#ff8f33;
+}
 
-    h1 {
-      margin-top: 0;
-    }
-  </style>
+/* Responsive */
+@media(max-width:400px){
+  .card img{
+    width:120px;
+  }
+  .card h2{
+    font-size:16px;
+  }
+}
+</style>
 </head>
 <body>
-  <div class="container">
 
-  <div style="display:flex; flex-wrap:wrap; gap:32px; align-items:flex-start;">
+<h1>Kebba Colley - My Badges</h1>
 
-    <!-- Badge Image -->
-    <div style="flex:0 0 260px; text-align:center;">
-      <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank">
-        <img src="./ccna.png"
-     alt="CCNA Badge"
-     style="width:240px;     border-radius:12px; max-width:100%;">
-      </a>
-    </div>
-
-    <!-- Badge Details -->
-    <div style="flex:1; min-width:260px;">
-      <h1 style="margin-top:0;">CCNA: Enterprise Networking, Security, and Automation</h1>
-      <p style="color:#6b7280; font-size:16px;">Issued by <strong>Cisco</strong></p>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:20px;">
-        <div style="background:#f9fafb; padding:12px; border-radius:8px;">
-          <strong>Issued To</strong><br>
-          Kebba Colley
-        </div>
-        <div style="background:#f9fafb; padding:12px; border-radius:8px;">
-          <strong>Issue Date</strong><br>
-          2024
-        </div>
-        <div style="background:#f9fafb; padding:12px; border-radius:8px;">
-          <strong>Credential ID</strong><br>
-          910a7546-5bd5-4f20-bfa4-212586e1e8eb
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div style="margin-top:24px;">
-        <h2 style="font-size:18px; margin-bottom:10px;">Skills</h2>
-        <div style="display:flex; flex-wrap:wrap; gap:8px;">
-          <span style="background:#e5f0ff; color:#1d4ed8; padding:6px 12px; border-radius:20px; font-size:13px; font-weight:500;">Networking Fundamentals</span>
-          <span style="background:#e5f0ff; color:#1d4ed8; padding:6px 12px; border-radius:20px; font-size:13px; font-weight:500;">IP Connectivity</span>
-          <span style="background:#e5f0ff; color:#1d4ed8; padding:6px 12px; border-radius:20px; font-size:13px; font-weight:500;">Network Security</span>
-          <span style="background:#e5f0ff; color:#1d4ed8; padding:6px 12px; border-radius:20px; font-size:13px; font-weight:500;">Automation & Programmability</span>
-          <span style="background:#e5f0ff; color:#1d4ed8; padding:6px 12px; border-radius:20px; font-size:13px; font-weight:500;">Switching & Routing</span>
-        </div>
-      </div>
-
-      <!-- QR Section -->
-      <div style="margin-top:32px; background:#f9fafb; padding:20px; border-radius:10px; text-align:center;">
-        <h2 style="margin:0 0 6px; font-size:17px;">Verify with QR Code</h2>
-        <p style="margin-bottom:10px; font-size:13px; color:#6b7280;">Scan to verify this credential on Credly</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb/verify" 
-             alt="Verify CCNA Badge QR Code"
-             style="border-radius:8px; border:1px solid #e5e7eb; max-width:100%;">
-      </div>
-
-      <!-- Buttons -->
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb/verify" 
-           target="_blank"
-           style="text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:600; font-size:14px; background:#2563eb; color:white; text-align:center;">
-          Verify on Credly
-        </a>
-
-        <a href="https://kebba-colley.github.io" 
-           target="_blank"
-           style="text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:600; font-size:14px; border:2px solid #2563eb; color:#2563eb; text-align:center;">
-          Back to Profile
-        </a>
-      </div>
-
-    </div> <!-- end details -->
-
-  </div> <!-- end header flex -->
-
-  <!-- Footer -->
-  <footer style="text-align:center; margin-top:40px; font-size:12px; color:#6b7280;">
-    © 2026 Kebba Colley · Credential displayed for verification purposes
-  </footer>
-
-</div> <!-- end container -->
-    <div style="display:flex; flex-wrap:wrap; gap:32px; align-items:center;">
-
-      <!-- Badge Image -->
-      <div style="flex:0 0 260px; text-align:center;">
-        <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank">
-          <img 
-            src="https://images.credly.com/images/8f6e3d53-30a6-4b70-9a1c-6f1a3c6b15d8/ccna.png"
-            alt="CCNA Badge"
-            style="width:240px; border-radius:12px;"
-          >
-        </a>
-      </div>
-
-      <!-- Badge Details -->
-      <div style="flex:1;">
-        <h1>CCNA: Enterprise Networking, Security, and Automation</h1>
-
-        <p style="color:#6b7280; font-size:16px;">
-          Issued by <strong>Cisco</strong>
-        </p>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:20px;">
-          <div style="background:#f9fafb; padding:14px; border-radius:8px;">
-            <strong>Issued To</strong><br>
-            Kebba Colley
-          </div>
-
-          <div style="background:#f9fafb; padding:14px; border-radius:8px;">
-            <strong>Issue Date</strong><br>
-            2026
-          </div>
-
-          <div style="background:#f9fafb; padding:14px; border-radius:8px;">
-            <strong>Credential ID</strong><br>
-            910a7546-5bd5-4f20-bfa4-212586e1e8eb
-          </div>
-        </div>
-<!-- Skills Section -->
-<div style="margin-top:24px;">
-  <h2 style="font-size:20px; margin-bottom:12px;">Skills</h2>
-  <div style="display:flex; flex-wrap:wrap; gap:10px;">
-    <span style="background:#e5f0ff; color:#1d4ed8; padding:8px 14px; border-radius:20px; font-size:13px; font-weight:500;">Networking Fundamentals</span>
-    <span style="background:#e5f0ff; color:#1d4ed8; padding:8px 14px; border-radius:20px; font-size:13px; font-weight:500;">IP Connectivity</span>
-    <span style="background:#e5f0ff; color:#1d4ed8; padding:8px 14px; border-radius:20px; font-size:13px; font-weight:500;">Network Security</span>
-    <span style="background:#e5f0ff; color:#1d4ed8; padding:8px 14px; border-radius:20px; font-size:13px; font-weight:500;">Automation & Programmability</span>
-    <span style="background:#e5f0ff; color:#1d4ed8; padding:8px 14px; border-radius:20px; font-size:13px; font-weight:500;">Switching & Routing</span>
-  </div>
-</div>
-
-<!-- QR Verification Section -->
-<div style="margin-top:32px; background:#f9fafb; padding:24px; border-radius:10px; text-align:center;">
-  <h2 style="margin:0 0 8px; font-size:18px;">Verify with QR Code</h2>
-  <p style="margin-bottom:14px; font-size:14px; color:#6b7280;">Scan to verify this credential on Credly</p>
+<!-- QR Section -->
+<div class="qr-section">
+  <p>Scan to open my site or click to download:</p>
   <a href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://techdev395-svg.github.io/kebba-colley.github.io/" download>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://techdev395-svg.github.io/kebba-colley.github.io/" alt="QR">
-</a>
-</div>
-
-<!-- Buttons Section -->
-<div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
-  <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb/verify" 
-     target="_blank"
-     style="text-decoration:none; padding:14px 22px; border-radius:8px; font-weight:600; font-size:14px; background:#2563eb; color:white;">
-    Verify on Credly
-  </a>
-
-  <a href="https://kebba-colley.github.io" 
-     target="_blank"
-     style="text-decoration:none; padding:14px 22px; border-radius:8px; font-weight:600; font-size:14px; border:2px solid #2563eb; color:#2563eb;">
-    Back to Profile
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://techdev395-svg.github.io/kebba-colley.github.io/" alt="QR">
   </a>
 </div>
-      </div>
-    </div>
 
-  </div>
+<!-- Badge Cards -->
+<div class="cards-container" id="cardsContainer">
+  <!-- Cards will be auto-generated -->
+</div>
+
+<script>
+// Badge Data
+const badges = [
+  {
+    title:"CCNA: Enterprise Networking, Security, and Automation",
+    skills:"Networking, Routing, Switching, IP Services",
+    img:"ccna.png",
+    credly:"https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb",
+    date:"6 January 2026"
+  },
+  {
+    title:"Cisco Security Badge",
+    skills:"Network Security, Firewalls, VPN",
+    img:"cisco-security.png",
+    credly:"https://www.credly.com/badges/example-security",
+    date:"6 January 2026"
+  }
+  // Add more badges here
+];
+
+// Generate badge cards dynamically
+const container = document.getElementById("cardsContainer");
+badges.forEach(b=>{
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${b.img}" alt="${b.title}">
+    <h2>${b.title}</h2>
+    <p><strong>Skills:</strong> ${b.skills}</p>
+    <p><strong>Issued:</strong> ${b.date}</p>
+    <a href="${b.credly}" target="_blank" class="verify-btn">Verify on Credly</a>
+  `;
+
+  container.appendChild(card);
+});
+</script>
+
 </body>
 </html>
