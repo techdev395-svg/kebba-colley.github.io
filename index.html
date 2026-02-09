@@ -20,23 +20,6 @@ h1{
   text-align:center;
 }
 
-/* QR Section */
-.qr-section{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-bottom:40px;
-}
-.qr-section p{
-  margin:0 0 10px 0;
-  font-weight:600;
-}
-.qr-section a img{
-  width:150px;
-  border-radius:12px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
-}
-
 /* Badge Grid */
 .badge-grid{
   display:grid;
@@ -116,6 +99,24 @@ h1{
   to{transform:scale(1);opacity:1}
 }
 
+/* QR Section */
+.qr-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:30px;
+  margin-bottom:20px;
+}
+.qr-section p{
+  margin:0 0 10px 0;
+  font-weight:600;
+}
+.qr-section a img{
+  width:150px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
 /* Responsive */
 @media(max-width:400px){
   .badge-grid img{
@@ -131,17 +132,17 @@ h1{
 
 <h1>Kebba Colley</h1>
 
-<!-- QR Section -->
+<!-- Badge Grid -->
+<div class="badge-grid" id="badgeGrid">
+  <!-- Badges generated dynamically -->
+</div>
+
+<!-- QR Section (Moved Below) -->
 <div class="qr-section">
   <p>Scan to open my site or click to download:</p>
   <a href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://techdev395-svg.github.io/kebba-colley.github.io/" download>
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://techdev395-svg.github.io/kebba-colley.github.io/" alt="QR">
   </a>
-</div>
-
-<!-- Badge Grid -->
-<div class="badge-grid" id="badgeGrid">
-  <!-- Badges generated dynamically -->
 </div>
 
 <!-- Badge Popup -->
