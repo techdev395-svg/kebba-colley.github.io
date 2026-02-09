@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kebba Colley - Badges</title>
 <style>
-body {
+body{
   font-family: Arial, sans-serif;
   background:#f5f5f5;
   margin:0;
@@ -14,11 +14,12 @@ body {
   flex-direction:column;
   align-items:center;
 }
-h1 {
+h1{
   color:#0b5cff;
   margin-bottom:20px;
   text-align:center;
 }
+
 /* QR Section */
 .qr-section{
   display:flex;
@@ -36,61 +37,92 @@ h1 {
   box-shadow:0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* Badge Cards Grid */
-.cards-container{
+/* Badge Grid */
+.badge-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:20px;
-  width:90%;
-  max-width:1000px;
+  justify-items:center;
+  margin-bottom:30px;
 }
-
-/* Badge Card Style */
-.card {
-  background:#fff;
-  border-radius:16px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.15);
-  overflow:hidden;
-  text-align:center;
-  padding:20px;
-}
-.card img{
-  width:140px;
-  margin-top:10px;
+.badge-grid img{
+  width:120px;
+  cursor:pointer;
   border-radius:12px;
-}
-.card h2{
-  margin:16px 0 8px;
-  color:#0b5cff;
-  font-size:18px;
-}
-.card p{
-  margin:4px 0;
-  color:#555;
-  font-size:14px;
-}
-.verify-btn{
-  display:inline-block;
-  margin:15px 0 0;
-  padding:10px 20px;
-  border-radius:12px;
-  background:#ff6f00;
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
   transition:0.2s;
 }
-.verify-btn:hover{
-  background:#ff8f33;
+.badge-grid img:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Popup styles */
+.popup-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:10px;
+  overflow:auto;
+}
+.popup-card{
+  background:#fff;
+  padding:24px;
+  border-radius:16px;
+  max-width:320px;
+  width:90%;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+  animation:pop .25s ease;
+  position:relative;
+}
+.popup-badge{
+  width:90px;
+  margin-bottom:12px;
+}
+.popup-card h3{
+  margin:8px 0;
+}
+.popup-card p{
+  font-size:14px;
+  color:#555;
+}
+.issued{
+  margin-top:8px;
+  font-size:13px;
+  color:#777;
+}
+.close-btn{
+  margin-top:12px;
+  padding:10px 16px;
+  border:none;
+  border-radius:10px;
+  background:#0b5cff;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.close-btn:hover{
+  background:#1a6cff;
+}
+
+@keyframes pop{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
 
 /* Responsive */
 @media(max-width:400px){
-  .card img{
-    width:120px;
+  .badge-grid img{
+    width:100px;
   }
-  .card h2{
-    font-size:16px;
+  .popup-card{
+    max-width:90%;
   }
 }
 </style>
@@ -107,46 +139,65 @@ h1 {
   </a>
 </div>
 
-<!-- Badge Cards -->
-<div class="cards-container" id="cardsContainer">
-  <!-- Cards will be auto-generated -->
+<!-- Badge Grid -->
+<div class="badge-grid" id="badgeGrid">
+  <!-- Badges generated dynamically -->
+</div>
+
+<!-- Badge Popup -->
+<div id="badgePopup" class="popup-overlay">
+  <div class="popup-card">
+    <img id="popupBadgeImg" src="" alt="Badge" class="popup-badge">
+    <h3 id="badgeTitle"></h3>
+    <p id="badgeSkills"></p>
+    <p class="issued"><strong>Issued:</strong> <span id="badgeDate"></span></p>
+    <button onclick="closePopup()" class="close-btn">Close</button>
+  </div>
 </div>
 
 <script>
 // Badge Data
 const badges = [
   {
-    title:"CCNA: Enterprise Networking, Security, and Automation",
+    title:"CCNA",
     skills:"Networking, Routing, Switching, IP Services",
-    img:"ccna.png",
-    credly:"https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb",
-    date:"6 January 2026"
+    img:"ccna.png"
   },
   {
-    title:"Cisco Security Badge",
+    title:"Cisco Security",
     skills:"Network Security, Firewalls, VPN",
-    img:"cisco-security.png",
-    credly:"https://www.credly.com/badges/example-security",
-    date:"6 January 2026"
+    img:"cisco-security.png"
   }
   // Add more badges here
 ];
 
-// Generate badge cards dynamically
-const container = document.getElementById("cardsContainer");
+// Generate badge grid
+const badgeGrid = document.getElementById("badgeGrid");
 badges.forEach(b=>{
-  const card = document.createElement("div");
-  card.className = "card";
+  const img = document.createElement("img");
+  img.src = b.img;
+  img.alt = b.title;
+  img.onclick = ()=> showBadge(b.title, b.skills, "6 January 2026", b.img);
+  badgeGrid.appendChild(img);
+});
 
-  card.innerHTML = `
-    <img src="${b.img}" alt="${b.title}">
-    <h2>${b.title}</h2>
-    <p><strong>Skills:</strong> ${b.skills}</p>
-    <p><strong>Issued:</strong> ${b.date}</p>
-    <a href="${b.credly}" target="_blank" class="verify-btn">Verify on Credly</a>
-  `;
+// Show popup
+function showBadge(title, skills, date, img){
+  document.getElementById("badgeTitle").innerText = title;
+  document.getElementById("badgeSkills").innerText = "Skills: " + skills;
+  document.getElementById("badgeDate").innerText = date;
+  document.getElementById("popupBadgeImg").src = img;
+  document.getElementById("badgePopup").style.display = "flex";
+}
+function closePopup(){
+  document.getElementById("badgePopup").style.display = "none";
+}
 
-  container.appendChild(card);
+// Close popup when clicking outside
+document.getElementById("badgePopup").addEventListener("click", function(e){
+  if(e.target === this){
+    closePopup();
+  }
 });
 </script>
 
