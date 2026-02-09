@@ -5,125 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kebba Colley - Badges</title>
 <style>
-body{
+body {
   font-family: Arial, sans-serif;
-  background:#f5f5f5;
-  margin:0;
-  padding:20px 0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-h1{
-  color:#0b5cff;
-  margin-bottom:20px;
-  text-align:center;
+
+h1 {
+  color: #0b5cff;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Badge Grid */
-.badge-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:20px;
-  justify-items:center;
-  margin-bottom:30px;
-}
-.badge-grid img{
-  width:120px;
-  cursor:pointer;
-  border-radius:12px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
-  transition:0.2s;
-}
-.badge-grid img:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 30px;
 }
 
-/* Popup styles */
-.popup-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  padding:10px;
-  overflow:auto;
-}
-.popup-card{
-  background:#fff;
-  padding:24px;
-  border-radius:16px;
-  max-width:320px;
-  width:90%;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(0,0,0,.3);
-  animation:pop .25s ease;
-  position:relative;
-}
-.popup-badge{
-  width:90px;
-  margin-bottom:12px;
-}
-.popup-card h3{
-  margin:8px 0;
-}
-.popup-card p{
-  font-size:14px;
-  color:#555;
-}
-.issued{
-  margin-top:8px;
-  font-size:13px;
-  color:#777;
-}
-.close-btn{
-  margin-top:12px;
-  padding:10px 16px;
-  border:none;
-  border-radius:10px;
-  background:#0b5cff;
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
-}
-.close-btn:hover{
-  background:#1a6cff;
+.badge-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-@keyframes pop{
-  from{transform:scale(.9);opacity:0}
-  to{transform:scale(1);opacity:1}
+.badge-card img {
+  width: 100px;
+  margin-bottom: 8px;
+}
+
+.badge-card h3 {
+  margin: 4px 0;
+  font-size: 16px;
+  color: #0b5cff;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.skills span {
+  background: #e0f0ff;
+  color: #0b5cff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+/* Issue Date */
+.issued {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
 }
 
 /* QR Section */
-.qr-section{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-top:30px;
-  margin-bottom:20px;
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
-.qr-section p{
-  margin:0 0 10px 0;
-  font-weight:600;
+
+.qr-section p {
+  margin: 0 0 10px 0;
+  font-weight: 600;
 }
-.qr-section a img{
-  width:150px;
-  border-radius:12px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+
+.qr-section a img {
+  width: 150px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Responsive */
-@media(max-width:400px){
-  .badge-grid img{
-    width:100px;
-  }
-  .popup-card{
-    max-width:90%;
+@media(max-width: 400px){
+  .badge-card img {
+    width: 80px;
   }
 }
 </style>
@@ -132,73 +103,57 @@ h1{
 
 <h1>Kebba Colley</h1>
 
-<!-- Badge Grid -->
-<div class="badge-grid" id="badgeGrid">
-  <!-- Badges generated dynamically -->
-</div>
+<div class="badge-grid" id="badgeGrid"></div>
 
-<!-- QR Section (Moved Below) -->
 <div class="qr-section">
-  <p>Scan to open my site or click to download:</p>
+  <p>Scan to open</p>
   <a href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://techdev395-svg.github.io/kebba-colley.github.io/" download>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://techdev395-svg.github.io/kebba-colley.github.io/" alt="QR">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://techdev395-svg.github.io/kebba-colley.github.io/" alt="QR Code">
   </a>
 </div>
 
-<!-- Badge Popup -->
-<div id="badgePopup" class="popup-overlay">
-  <div class="popup-card">
-    <img id="popupBadgeImg" src="" alt="Badge" class="popup-badge">
-    <h3 id="badgeTitle"></h3>
-    <p id="badgeSkills"></p>
-    <p class="issued"><strong>Issued:</strong> <span id="badgeDate"></span></p>
-    <button onclick="closePopup()" class="close-btn">Close</button>
-  </div>
-</div>
-
 <script>
-// Badge Data
+// Badge Data — CCNA only
 const badges = [
   {
-    title:"CCNA",
-    skills:"Networking, Routing, Switching, IP Services",
-    img:"ccna.png"
-  },
-  {
-    title:"Cisco Security",
-    skills:"Network Security, Firewalls, VPN",
-    img:"cisco-security.png"
+    title: "CCNA",
+    skills: ["Networking", "Routing", "Switching", "IP Services"],
+    img: "ccna.png", // Replace with your actual image URL
+    date: "6 January 2026"
   }
-  // Add more badges here
 ];
 
-// Generate badge grid
 const badgeGrid = document.getElementById("badgeGrid");
-badges.forEach(b=>{
+badges.forEach(b => {
+  const card = document.createElement("div");
+  card.className = "badge-card";
+
   const img = document.createElement("img");
   img.src = b.img;
   img.alt = b.title;
-  img.onclick = ()=> showBadge(b.title, b.skills, "6 January 2026", b.img);
-  badgeGrid.appendChild(img);
-});
 
-// Show popup
-function showBadge(title, skills, date, img){
-  document.getElementById("badgeTitle").innerText = title;
-  document.getElementById("badgeSkills").innerText = "Skills: " + skills;
-  document.getElementById("badgeDate").innerText = date;
-  document.getElementById("popupBadgeImg").src = img;
-  document.getElementById("badgePopup").style.display = "flex";
-}
-function closePopup(){
-  document.getElementById("badgePopup").style.display = "none";
-}
+  const title = document.createElement("h3");
+  title.innerText = b.title;
 
-// Close popup when clicking outside
-document.getElementById("badgePopup").addEventListener("click", function(e){
-  if(e.target === this){
-    closePopup();
-  }
+  // Create styled skills
+  const skillsDiv = document.createElement("div");
+  skillsDiv.className = "skills";
+  b.skills.forEach(skill => {
+    const span = document.createElement("span");
+    span.innerText = skill;
+    skillsDiv.appendChild(span);
+  });
+
+  const issued = document.createElement("p");
+  issued.className = "issued";
+  issued.innerText = "Issued: " + b.date;
+
+  card.appendChild(img);
+  card.appendChild(title);
+  card.appendChild(skillsDiv);
+  card.appendChild(issued);
+
+  badgeGrid.appendChild(card);
 });
 </script>
 
