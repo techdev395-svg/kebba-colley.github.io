@@ -1,161 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kebba Colley - Badges</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credential Verification | Kebba Colley</title>
+    <style>
+        body { font-family: 'Open Sans', Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 40px; color: #3c3c3c; }
+        .badge-container { max-width: 650px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e1e4e8; }
+        .header { background-color: #ffffff; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee; }
+        
+        /* Badge Image Styling */
+        .badge-img { width: 180px; height: 180px; margin-bottom: 20px; transition: transform 0.3s ease; cursor: pointer; }
+        .badge-img:hover { transform: scale(1.05); }
 
-h1 {
-  color: #0b5cff;
-  margin-bottom: 20px;
-  text-align: center;
-}
+        h1 { color: #000; margin: 10px 0; font-size: 22px; font-weight: 600; }
+        .issuer-info { color: #666; font-size: 16px; margin-bottom: 20px; }
+        .issuer-info strong { color: #0070ad; }
+        
+        .recipient-box { background: #f0f7ff; padding: 15px; border-radius: 6px; display: inline-block; margin-bottom: 10px; border: 1px solid #d0e3ff; }
+        .recipient-name { font-size: 18px; color: #1d2b36; font-weight: bold; }
+        .issue-date { font-size: 13px; color: #666; margin-top: 5px; }
 
-/* Badge Grid */
-.badge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  margin-bottom: 30px;
-}
-
-.badge-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.badge-card img {
-  width: 100px;
-  margin-bottom: 8px;
-}
-
-.badge-card h3 {
-  margin: 4px 0;
-  font-size: 16px;
-  color: #0b5cff;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  margin: 4px 0;
-}
-
-.skills span {
-  background: #e0f0ff;
-  color: #0b5cff;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 13px;
-}
-
-/* Issue Date */
-.issued {
-  font-size: 13px;
-  color: #777;
-  margin-top: 4px;
-}
-
-/* QR Section */
-.qr-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.qr-section p {
-  margin: 0 0 10px 0;
-  font-weight: 600;
-}
-
-.qr-section a img {
-  width: 150px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Responsive */
-@media(max-width: 400px){
-  .badge-card img {
-    width: 80px;
-  }
-}
-</style>
+        .content { padding: 30px; line-height: 1.6; }
+        .section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; color: #767676; letter-spacing: 1.2px; margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        
+        .skills-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .skill-tag { background: #f1f3f5; color: #495057; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #dee2e6; }
+        
+        .footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #999; }
+        .verify-btn { display: inline-block; background-color: #ff6a00; color: white; padding: 10px 25px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: background 0.2s; }
+        .verify-btn:hover { background-color: #e65c00; }
+    </style>
 </head>
 <body>
 
-<h1>Kebba Colley</h1>
+<div class="badge-container">
+    <div class="header">
+        <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank">
+            <img src="ccna.png" alt="CCNA ENSA Badge" class="badge-img">
+        </a>
+        
+        <h1>CCNA: Enterprise Networking, Security, and Automation</h1>
+        <div class="issuer-info">Issued by <strong>Cisco</strong></div>
+        
+        <div class="recipient-box">
+            <div class="recipient-name">Kebba Colley</div>
+            <div class="issue-date">Issued on January 6, 2026</div>
+        </div>
+        <br>
+        <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank" class="verify-btn">Verify Credential</a>
+    </div>
 
-<div class="badge-grid" id="badgeGrid"></div>
+    <div class="content">
+        <div class="section-title">Description</div>
+        <p>Cisco verifies the earner of this badge successfully completed the Enterprise Networking, Security and Automation course and achieved this student level credential. The earner has a foundation in scalable network architectures, dynamic routing, mitigation of security threats, wide-area networks, virtualization, and automation of programmable networks.</p>
 
-<div class="qr-section">
-  <p>Scan to open</p>
-  <a href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://techdev395-svg.github.io/kebba-colley.github.io/" download>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://techdev395-svg.github.io/kebba-colley.github.io/" alt="QR Code">
-  </a>
+        <div class="section-title">Verified Skills</div>
+        <div class="skills-container">
+            <span class="skill-tag">Dynamic Routing</span>
+            <span class="skill-tag">Network Address Translation (NAT)</span>
+            <span class="skill-tag">Network Automation Basics</span>
+            <span class="skill-tag">Quality Of Service (QoS)</span>
+            <span class="skill-tag">Security Threat Mitigation</span>
+            <span class="skill-tag">Software Driven Networks</span>
+            <span class="skill-tag">Virtualization</span>
+            <span class="skill-tag">Wide Area Networks</span>
+        </div>
+
+        <div class="section-title">Earning Criteria</div>
+        <ul style="font-size: 14px; padding-left: 20px;">
+            <li>Completed up to 41 lab activities.</li>
+            <li>Accumulated up to 15 hours of hands-on labs using Cisco hardware and/or Cisco Packet Tracer tool.</li>
+            <li>Passed instructor-led assessments and final examination.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        © 2026 Cisco Systems, Inc. & Credly | Verified Student Credential
+    </div>
 </div>
-
-<script>
-// Badge Data — CCNA only
-const badges = [
-  {
-    title: "CCNA",
-    skills: ["Networking", "Routing", "Switching", "IP Services"],
-    img: "ccna.png", // Replace with your actual image URL
-    date: "6 January 2026"
-  }
-];
-
-const badgeGrid = document.getElementById("badgeGrid");
-badges.forEach(b => {
-  const card = document.createElement("div");
-  card.className = "badge-card";
-
-  const img = document.createElement("img");
-  img.src = b.img;
-  img.alt = b.title;
-
-  const title = document.createElement("h3");
-  title.innerText = b.title;
-
-  // Create styled skills
-  const skillsDiv = document.createElement("div");
-  skillsDiv.className = "skills";
-  b.skills.forEach(skill => {
-    const span = document.createElement("span");
-    span.innerText = skill;
-    skillsDiv.appendChild(span);
-  });
-
-  const issued = document.createElement("p");
-  issued.className = "issued";
-  issued.innerText = "Issued: " + b.date;
-
-  card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(skillsDiv);
-  card.appendChild(issued);
-
-  badgeGrid.appendChild(card);
-});
-</script>
 
 </body>
 </html>
