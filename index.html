@@ -5,79 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credential Verification | Kebba Colley</title>
     <style>
-        body { font-family: 'Open Sans', Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 40px; color: #3c3c3c; }
-        .badge-container { max-width: 650px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e1e4e8; }
-        .header { background-color: #ffffff; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee; }
-        
-        /* Badge Image Styling */
-        .badge-img { width: 180px; height: 180px; margin-bottom: 20px; transition: transform 0.3s ease; cursor: pointer; }
-        .badge-img:hover { transform: scale(1.05); }
-
-        h1 { color: #000; margin: 10px 0; font-size: 22px; font-weight: 600; }
-        .issuer-info { color: #666; font-size: 16px; margin-bottom: 20px; }
-        .issuer-info strong { color: #0070ad; }
-        
-        .recipient-box { background: #f0f7ff; padding: 15px; border-radius: 6px; display: inline-block; margin-bottom: 10px; border: 1px solid #d0e3ff; }
-        .recipient-name { font-size: 18px; color: #1d2b36; font-weight: bold; }
-        .issue-date { font-size: 13px; color: #666; margin-top: 5px; }
-
-        .content { padding: 30px; line-height: 1.6; }
-        .section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; color: #767676; letter-spacing: 1.2px; margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
-        
-        .skills-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-        .skill-tag { background: #f1f3f5; color: #495057; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #dee2e6; }
-        
-        .footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #999; }
-        .verify-btn { display: inline-block; background-color: #ff6a00; color: white; padding: 10px 25px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: background 0.2s; }
-        .verify-btn:hover { background-color: #e65c00; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f7f9;
+        }
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .badge-img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .badge-img:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+        .issuer {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .issuer strong {
+            color: #0070ad; /* Cisco Blue */
+        }
+        .user-info {
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        .user-name {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+        }
+        .issue-date {
+            font-size: 14px;
+            color: #888;
+        }
+        .details-section {
+            text-align: left;
+            margin-top: 30px;
+        }
+        h2 {
+            font-size: 18px;
+            border-bottom: 2px solid #FF6B00;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .skill-tag {
+            background: #e9ecef;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #999;
+        }
     </style>
 </head>
 <body>
 
-<div class="badge-container">
-    <div class="header">
-        <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank">
-            <img src="ccna.png" alt="CCNA ENSA Badge" class="badge-img">
-        </a>
-        
-        <h1>CCNA: Enterprise Networking, Security, and Automation</h1>
-        <div class="issuer-info">Issued by <strong>Cisco</strong></div>
-        
-        <div class="recipient-box">
-            <div class="recipient-name">Kebba Colley</div>
-            <div class="issue-date">Issued on January 6, 2026</div>
-        </div>
-        <br>
-        <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank" class="verify-btn">Verify Credential</a>
+<div class="card">
+    <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank">
+        <img src="ccna.png" alt="CCNA ENSA Badge" class="badge-img">
+    </a>
+
+    <h1>CCNA: Enterprise Networking, Security, and Automation</h1>
+    <p class="issuer">Issued by <strong>Cisco</strong></p>
+
+    <div class="user-info">
+        <span class="user-name">Kebba Colley</span>
+        <span class="issue-date">Issued on January 6, 2026</span>
     </div>
 
-    <div class="content">
-        <div class="section-title">Description</div>
+    <div class="details-section">
+        <h2>Description</h2>
         <p>Cisco verifies the earner of this badge successfully completed the Enterprise Networking, Security and Automation course and achieved this student level credential. The earner has a foundation in scalable network architectures, dynamic routing, mitigation of security threats, wide-area networks, virtualization, and automation of programmable networks.</p>
 
-        <div class="section-title">Verified Skills</div>
-        <div class="skills-container">
-            <span class="skill-tag">Dynamic Routing</span>
-            <span class="skill-tag">Network Address Translation (NAT)</span>
-            <span class="skill-tag">Network Automation Basics</span>
-            <span class="skill-tag">Quality Of Service (QoS)</span>
-            <span class="skill-tag">Security Threat Mitigation</span>
-            <span class="skill-tag">Software Driven Networks</span>
-            <span class="skill-tag">Virtualization</span>
-            <span class="skill-tag">Wide Area Networks</span>
-        </div>
+        <h2>Verified Skills</h2>
+        <ul class="skills-list">
+            <li class="skill-tag">Dynamic Routing</li>
+            <li class="skill-tag">Network Address Translation (NAT)</li>
+            <li class="skill-tag">Network Automation Basics</li>
+            <li class="skill-tag">Quality Of Service (QoS)</li>
+            <li class="skill-tag">Security Threat Mitigation</li>
+            <li class="skill-tag">Software Driven Networks</li>
+            <li class="skill-tag">Virtualization</li>
+            <li class="skill-tag">Wide Area Networks</li>
+        </ul>
 
-        <div class="section-title">Earning Criteria</div>
-        <ul style="font-size: 14px; padding-left: 20px;">
+        <h2>Earning Criteria</h2>
+        <ul style="font-size: 14px; color: #555;">
             <li>Completed up to 41 lab activities.</li>
             <li>Accumulated up to 15 hours of hands-on labs using Cisco hardware and/or Cisco Packet Tracer tool.</li>
             <li>Passed instructor-led assessments and final examination.</li>
         </ul>
     </div>
 
-    <div class="footer">
+    <footer>
         © 2026 Cisco Systems, Inc. & Credly | Verified Student Credential
-    </div>
+    </footer>
 </div>
 
 </body>
