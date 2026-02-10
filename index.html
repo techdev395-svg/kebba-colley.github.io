@@ -21,14 +21,14 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: center;
         }
+        /* Badge remains static (not clickable) */
         .badge-img {
             width: 180px;
             height: auto;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        .badge-img:hover {
-            transform: scale(1.05);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         h1 {
             font-size: 24px;
@@ -41,7 +41,7 @@
             margin-bottom: 25px;
         }
         .issuer strong {
-            color: #0070ad; /* Cisco Blue */
+            color: #0070ad;
         }
         .user-info {
             border-top: 1px solid #eee;
@@ -57,6 +57,21 @@
         .issue-date {
             font-size: 14px;
             color: #888;
+        }
+        /* Style for the GitHub Certificate Link */
+        .cert-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #000;
+            color: #fff !important;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .cert-link:hover {
+            background-color: #FF6B00;
         }
         .details-section {
             text-align: left;
@@ -92,9 +107,7 @@
 <body>
 
 <div class="card">
-    <a href="https://www.credly.com/badges/910a7546-5bd5-4f20-bfa4-212586e1e8eb" target="_blank">
-        <img src="ccna.png" alt="CCNA ENSA Badge" class="badge-img">
-    </a>
+    <img src="ccna.png" alt="CCNA ENSA Badge" class="badge-img">
 
     <h1>CCNA: Enterprise Networking, Security, and Automation</h1>
     <p class="issuer">Issued by <strong>Cisco</strong></p>
@@ -102,11 +115,17 @@
     <div class="user-info">
         <span class="user-name">Kebba Colley</span>
         <span class="issue-date">Issued on January 6, 2026</span>
+        <br>
+        <a href="https://github.com/techdev395-svg/kebba-colley.github.io/raw/main/YOUR_CERTIFICATE_FILE.pdf" 
+           target="_blank" 
+           class="cert-link">
+           View Full Certificate
+        </a>
     </div>
 
     <div class="details-section">
         <h2>Description</h2>
-        <p>Cisco verifies the earner of this badge successfully completed the Enterprise Networking, Security and Automation course and achieved this student level credential. The earner has a foundation in scalable network architectures, dynamic routing, mitigation of security threats, wide-area networks, virtualization, and automation of programmable networks.</p>
+        <p>Cisco verifies the earner of this badge successfully completed the Enterprise Networking, Security and Automation course...</p>
 
         <h2>Verified Skills</h2>
         <ul class="skills-list">
@@ -119,17 +138,10 @@
             <li class="skill-tag">Virtualization</li>
             <li class="skill-tag">Wide Area Networks</li>
         </ul>
-
-        <h2>Earning Criteria</h2>
-        <ul style="font-size: 14px; color: #555;">
-            <li>Completed up to 41 lab activities.</li>
-            <li>Accumulated up to 15 hours of hands-on labs using Cisco hardware and/or Cisco Packet Tracer tool.</li>
-            <li>Passed instructor-led assessments and final examination.</li>
-        </ul>
     </div>
 
     <footer>
-        © 2026 Cisco Systems, Inc. & Credly | Verified Student Credential
+        © 2026 Cisco Systems, Inc. | Verified Student Credential
     </footer>
 </div>
 
