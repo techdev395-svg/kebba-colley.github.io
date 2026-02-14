@@ -30,9 +30,10 @@
 
         .button-group { display: flex; align-items: center; gap: 20px; margin: 25px 0 40px 0; }
 
+        /* Modified to span style: removed underline and pointer cursor */
         .verify-btn {
             display: inline-flex; align-items: center; color: #74b9ff;
-            text-decoration: underline; font-size: 15px; font-weight: 600;
+            font-size: 15px; font-weight: 600; cursor: default;
         }
         .verify-btn svg { margin-right: 8px; fill: #00b894; }
 
@@ -110,16 +111,17 @@
     <div class="meta-info">This badge was issued to <span>Kebba Colley</span></div>
     <div class="meta-info">Date issued: January 6, 2026</div>
 
-    <div class="button-group">
-        <a href="https://github.com/kebba-colley/kebba-colley.github.io/raw/main/YOUR_CERTIFICATE_FILE.pdf" target="_blank" class="verify-btn">
+        <div class="button-group">
+        <span class="verify-btn">
             <svg width="17" height="17" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            Verify
-        </a>
+            Verified
+        </span>
         <button class="celebrate-btn" onclick="openModal()">
             <svg width="17" height="17" viewBox="0 0 24 24"><path d="M2 22l1.5-1.5L5 22l1.5-1.5L8 22V10l-6 2v10zM20 4l-1.5 1.5L17 4l-1.5 1.5L14 4v12l6-2V4zM12 2l-2 2 2 2 2-2-2-2z"/></svg>
             Celebrate
         </button>
     </div>
+
 
     <div class="badge-header">
         <img src="ccna.png" alt="CCNA Badge" class="badge-img">
